@@ -1,0 +1,21 @@
+<template>
+  <lightning-card title="User Input Form" icon-name="action:new_contact">
+    <div class="slds-m-around_medium">
+      <lightning-input
+        label="Password"
+        type="password"
+        value={password}
+        onchange={handleChangePassword}
+      ></lightning-input>
+      <p>{recordId}</p>
+      <lightning-button
+        label="Submit Data"
+        onclick={handleCreate}
+      ></lightning-button>
+      <template if:true={serverData}>
+        <p>{serverData.Mongo_Id__c}</p>
+        <p>{serverData.Email__c}</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
