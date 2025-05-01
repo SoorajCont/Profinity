@@ -1,0 +1,37 @@
+<template>
+  <div class="bg"></div>
+  <div class="main">
+    <h1 class="heading">Proofinity</h1>
+    <div class="container">
+      <!-- List Section -->
+      <div class="list-section">
+        <h2>Item List</h2>
+        <ul>
+          <template for:each={items} for:item="item">
+            <li key={item.id}>{item.name}</li>
+          </template>
+        </ul>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-section">
+        <h2>Image Display</h2>
+        <img src={imageUrl} alt="Sample Image" />
+      </div>
+    </div>
+    <div class="slds-p-around_medium">
+      <lightning-button
+        label="Authorize"
+        onclick={handleRedirect}
+        variant="brand"
+      ></lightning-button>
+    </div>
+    <div>
+      <lightning-button
+        label="Fetch Token"
+        onclick={handleFetch}
+      ></lightning-button>
+      <p>{response}</p>
+    </div>
+  </div>
+</template>

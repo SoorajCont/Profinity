@@ -1,0 +1,18 @@
+<!-- HelloLWCPage.page -->
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="LightningComponentContainer"></div>
+    <script>
+
+        $Lightning.use("c:proofinityApp", function () {
+            $Lightning.createComponent(
+                "c:proofinity",
+                { message: "Hello from Visualforce!" },
+                "LightningComponentContainer",
+                function (cmp) {
+                    console.log("LWC added to Visualforce page");
+                }
+            );
+        });
+    </script>
+</apex:page>
